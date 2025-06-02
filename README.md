@@ -1,68 +1,110 @@
+# 🛣️ Road Network Connectivity Prediction using Geospatial Data & Machine Learning
 
+This project aims to **analyze and predict road network connectivity** using a combination of **machine learning**, **graph algorithms**, and **geospatial data**, enhanced with APIs for distance and elevation. The region of focus is **Chamoli district, Uttarakhand, India**.
 
+---
 
+## 📌 Project Overview
 
-Project Overview
-This project aims to analyze and predict road network connectivity using a combination of machine learning, geographic data, and API-based distance and elevation calculations. The project involves:
+We build an intelligent pipeline that integrates:
+- Road network data from **OpenStreetMap (OSM)**
+- Elevation data from **Google Elevation API**
+- Distance data from **Google Distance Matrix API**
+- **Slope** and **curvature** calculations
+- **Floyd-Warshall algorithm** for shortest path analysis
 
-Loading and analyzing road networks from OpenStreetMap (OSM).
-Fetching altitude data using the Google Elevation API.
-Calculating distances and slopes using the Google Distance Matrix API.
-Integrating curvature calculations based on road geometry.
-Applying the Floyd-Warshall algorithm for shortest path computations based on the slope and curvature.
+We are also actively working on extending this using **Graph Neural Networks (GNNs)** for spatial inference.
 
+---
 
-Key Features
-Road Network Loading: Utilizes the OSMnx library to load and visualize the road network of Chamoli district, India.
-Altitude Fetching: Retrieves altitude data for nodes in the road network using the Google Elevation API.
-Distance Calculation: Computes the distance between nodes using the Google Distance Matrix API.
-Slope Calculation: Computes slope for each road segment based on altitude difference and distance.
-Curvature Calculation: Computes road curvature based on geometric properties of the road segments.
-Shortest Path Computation: Uses the Floyd-Warshall algorithm to compute shortest paths considering slope.
-Visualization: Displays the road network graphically without edge weights.
+## 🚀 Key Features
 
+| Feature                     | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| 🗺️ Road Network Loading     | Load and visualize road networks using OSMnx for Chamoli district.          |
+| ⛰️ Altitude Fetching        | Fetch elevation data using **Google Elevation API**.                        |
+| 📏 Distance Calculation     | Compute real-world distances via **Google Distance Matrix API**.           |
+| 📐 Slope Estimation         | Calculate slope based on elevation and distance between nodes.             |
+| 🌀 Curvature Calculation    | Estimate road curvature using **Shapely** geometric properties.            |
+| 🔀 Shortest Path Analysis   | Apply **Floyd-Warshall algorithm** considering slope as the edge weight.   |
+| 📊 Visualization            | Render the road network graph without cluttering edge weights.             |
+| 🤖 GNN Integration          | Ongoing work using **Graph Neural Networks** for predictive modeling.      |
 
-Tech Stack
-This project uses a variety of technologies and libraries to achieve its goals:
+---
 
-Libraries and Tools
-Python: The primary programming language used for scripting and data analysis.
-OSMnx: For downloading, modeling, and visualizing street networks from OpenStreetMap.
-NetworkX: For creating, manipulating, and analyzing complex networks and graphs.
-Matplotlib: For visualizing the road network graphically.
-Pandas: For data manipulation and analysis, particularly with CSV files.
-Requests: For making HTTP requests to external APIs.
-Shapely: For geometric operations and curvature calculations.
-APIs
-Google Maps Elevation API: Provides altitude data for coordinates.
-Google Maps Distance Matrix API: Calculates distances between geographical coordinates.
-Algorithms
-Floyd-Warshall Algorithm: Used for finding shortest paths in weighted graphs based on slope data.
-Data Sources
-OpenStreetMap (OSM): Provides the road network data used in the analysis.
-CSV File: Contains latitude and longitude coordinates for altitude and distance calculations.
-Development Environment
-Python Version: 3.x (Specify exact version if needed)
-IDE: (Specify if you're using an IDE like PyCharm or VS Code)
-Operating System: (Specify if relevant, e.g., Windows, Linux)
+## 🧰 Tech Stack
 
+### ⚙️ Languages & Environment
+- **Python 3.x**
+- IDE: *PyCharm* (recommended)
+- OS: *Windows / Linux* (project tested on both)
 
-Results
-SRTM-DEM Dataset Creation:
+### 📦 Python Libraries
+| Library      | Purpose                                        |
+|--------------|------------------------------------------------|
+| `osmnx`      | Download and visualize road networks           |
+| `networkx`   | Graph construction and analysis                |
+| `pandas`     | Data manipulation                              |
+| `matplotlib` | Graphical visualizations                       |
+| `requests`   | API calls to external services                 |
+| `shapely`    | Geometric calculations                         |
 
-Created a comprehensive dataset for the SRTM-DEM data covering the entire Uttarakhand state.
-Feasibility of Connectivity:
+### 🌐 APIs Used
+- **Google Maps Elevation API**
+- **Google Maps Distance Matrix API**
 
-Analyzed the feasibility of connecting new nodes within the Chamoli district, considering slope and distance constraints.
-Road Network Report:
+### 📊 Algorithm
+- **Floyd-Warshall** for shortest path based on slope-weighted edges.
 
-Generated a detailed report on the condition of the existing road network in the Chamoli district, highlighting areas of concern and potential improvements.
+---
 
-sources
-google earth,
-nasa earth dataset,
-GPS Visualizer, 
-QGIS
+## 🗂️ Data Sources
 
+| Source                   | Description                                |
+|--------------------------|--------------------------------------------|
+| OpenStreetMap (OSM)      | Primary road network data                  |
+| Google Earth             | Visual reference and mapping               |
+| NASA Earthdata (SRTM)    | Digital Elevation Model (DEM) data         |
+| GPS Visualizer           | Coordinate referencing                     |
+| QGIS                     | Spatial data analysis                      |
+| Custom CSV Input         | Latitude & longitude coordinate mappings   |
 
+---
+
+## 📈 Results
+
+### ✅ Feasibility Analysis
+
+We evaluated new node connections based on slope and distance constraints:
+
+| Criteria                         | Result                                   |
+|----------------------------------|------------------------------------------|
+| Feasibility Threshold (Distance) | 20 km                                    |
+| Evaluation District              | Chamoli, Uttarakhand                     |
+| Connectivity Status              | Generated feasible/non-feasible matrix   |
+
+### 🌍 SRTM-DEM Dataset
+
+- Created a dataset combining **Digital Elevation Model** (DEM) data across **Uttarakhand**.
+- Incorporated into road analysis for improved accuracy.
+
+### 📋 Road Network Report
+
+- Generated an infrastructure report highlighting:
+  - Areas with high slope or curvature (challenging terrain)
+  - Gaps in connectivity
+  - Opportunities for road expansion or rerouting
+
+---
+
+## 🧠 GNN Integration (Ongoing)
+
+We are currently implementing **Graph Neural Networks** (GNNs) to:
+- Predict future road expansion zones
+- Identify optimal road construction plans
+- Learn spatial patterns in road feasibility and elevation dynamics
+
+---
+
+## 📁 Project Structure
 
